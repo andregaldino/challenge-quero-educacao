@@ -9,9 +9,14 @@
   "scripts": {
     "start": "node src/index.js",
     "lint": "npx eslint . --fix",
-    "test:acceptance": "mocha __tests__/acceptance/api.js"
+    "db:create": "npx sequelize-cli db:create",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "pretest:acceptance": "cross-env NODE_ENV=test yarn run db:create && cross-env NODE_ENV=test npx sequelize-cli db:migrate &&  cross-env NODE_ENV=test yarn run db:seed",
+    "posttest:acceptance": "cross-env NODE_ENV=test npx sequelize db:drop",
+    "test:acceptance": "cross-env NODE_ENV=test mocha __tests__/acceptance/api.js"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
