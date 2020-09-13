@@ -1,0 +1,19 @@
+{
+  "title": "test health check should be ok",
+  "request": {
+    "headers": {
+      "Accept": "application/json"
+    },
+    "method": "GET",
+    "endpoint": "/v1/health"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "statusCode": 200,
+    "body": {
+      "msg": "ok"
+    }
+  }
+}
