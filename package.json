@@ -1,0 +1,25 @@
+{
+  "name": "challenge-quero-educacao",
+  "version": "1.0.0",
+  "description": "challenge quero educação",
+  "main": "src/server.js",
+  "repository": "git@github.com:andregaldino/challenge-quero-educacao.git",
+  "author": "André Galdino <andre.galdinolima@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "lint": "npx eslint . --fix"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.1.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
