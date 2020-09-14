@@ -1,0 +1,77 @@
+{
+  "title": "test get filtered courses must be return 200",
+  "request": {
+    "headers": {
+      "Accept": "application/json"
+    },
+    "method": "GET",
+    "endpoint": "/v1/courses?university[name]=UNIP&kind=Presencial&level=Bacharelado&shift=Noite"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "statusCode": 200,
+    "body": [
+      {
+        "course": {
+          "name": "Engenharia Mecânica",
+          "kind": "Presencial",
+          "level": "Bacharelado",
+          "shift": "Noite"
+        },
+        "university": {
+          "name": "UNIP",
+          "score": 4.5,
+          "logo_url": "https://www.tryimg.com/u/2019/04/16/unip.png"
+        },
+        "campus": {
+          "name": "Jardim das Indústrias",
+          "city": "São José dos Campos"
+        }
+      },
+      {
+        "course": {
+          "name": "Jornalismo",
+          "kind": "Presencial",
+          "level": "Bacharelado",
+          "shift": "Noite"
+        },
+        "university": {
+          "name": "UNIP",
+          "score": 4.5,
+          "logo_url": "https://www.tryimg.com/u/2019/04/16/unip.png"
+        },
+        "campus": { "name": "Água Branca", "city": "São Paulo" }
+      },
+      {
+        "course": {
+          "name": "Biomedicina",
+          "kind": "Presencial",
+          "level": "Bacharelado",
+          "shift": "Noite"
+        },
+        "university": {
+          "name": "UNIP",
+          "score": 4.5,
+          "logo_url": "https://www.tryimg.com/u/2019/04/16/unip.png"
+        },
+        "campus": { "name": "Jaguaré", "city": "São Paulo" }
+      },
+      {
+        "course": {
+          "name": "Propaganda e Marketing",
+          "kind": "Presencial",
+          "level": "Bacharelado",
+          "shift": "Noite"
+        },
+        "university": {
+          "name": "UNIP",
+          "score": 4.5,
+          "logo_url": "https://www.tryimg.com/u/2019/04/16/unip.png"
+        },
+        "campus": { "name": "Paraíso", "city": "São Paulo" }
+      }
+    ]
+  }
+}
