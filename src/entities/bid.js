@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize')
 const connection = require('../utils/connectDatabase')
 const course = require('./course')
 
-const bid = connection.define('Bid', {
+const bid = connection.define('bid', {
   full_price: {
     type: DataTypes.FLOAT,
   },

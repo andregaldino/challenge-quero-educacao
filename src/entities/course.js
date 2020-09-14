@@ -5,7 +5,7 @@ const connection = require('../utils/connectDatabase')
 const campus = require('./campus')
 const university = require('./university')
 
-const course = connection.define('Course', {
+const course = connection.define('course', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
