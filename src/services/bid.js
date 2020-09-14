@@ -6,6 +6,7 @@ const getAll = async (filters) => {
   const { where } = filters
   const { relationships } = filters
   const { university, campus, course } = relationships || []
+  const { sort } = filters
   const relationshipUniversity = {
     model: University,
   }
@@ -35,6 +36,7 @@ const getAll = async (filters) => {
   return Bid.findAll({
     where,
     include: relationshipCourse,
+    order: sort,
   })
 }
 

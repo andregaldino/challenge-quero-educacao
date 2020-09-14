@@ -13,7 +13,8 @@ const filter = (req, res, next) => {
 
   const keysRelations = Object.keys(req.query).filter(
     (key) =>
-      Array.isArray(req.query[key]) || typeof req.query[key] === 'object',
+      (Array.isArray(req.query[key]) || typeof req.query[key] === 'object') &&
+      key !== 'sort',
   )
 
   filters.where = Object.assign(
@@ -29,6 +30,11 @@ const filter = (req, res, next) => {
       return { [key]: req.query[key] }
     }),
   )
+
+  const { sort } = req.query
+  filters.sort = Object.keys(sort || {}).map((key) => {
+    return [key, sort[key]]
+  })
 
   req.filters = filters
 

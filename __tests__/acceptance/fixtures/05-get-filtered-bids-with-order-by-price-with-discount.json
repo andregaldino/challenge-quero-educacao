@@ -1,0 +1,61 @@
+{
+  "title": "test get filtered bids with order by price_with_discount",
+  "request": {
+    "headers": {
+      "Accept": "application/json"
+    },
+    "method": "GET",
+    "endpoint": "/v1/bids?course[name]=Engenharia Mecânica&sort[price_with_discount]=desc"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "statusCode": 200,
+    "body": [
+      {
+        "full_price": 2139.64,
+        "price_with_discount": 706.08,
+        "discount_percentage": 67,
+        "start_date": "01/08/2019",
+        "enrollment_semester": "2019.2",
+        "enabled": true,
+        "course": {
+          "name": "Engenharia Mecânica",
+          "kind": "Presencial",
+          "level": "Bacharelado",
+          "shift": "Noite"
+        },
+        "university": {
+          "name": "UNIP",
+          "score": 4.5,
+          "logo_url": "https://www.tryimg.com/u/2019/04/16/unip.png"
+        },
+        "campus": {
+          "name": "Jardim das Indústrias",
+          "city": "São José dos Campos"
+        }
+      },
+      {
+        "full_price": 1745.22,
+        "price_with_discount": 539.1,
+        "discount_percentage": 69.11,
+        "start_date": "01/08/2019",
+        "enrollment_semester": "2019.2",
+        "enabled": true,
+        "course": {
+          "name": "Engenharia Mecânica",
+          "kind": "Presencial",
+          "level": "Bacharelado",
+          "shift": "Manhã"
+        },
+        "university": {
+          "name": "UNICSUL",
+          "score": 3.9,
+          "logo_url": "https://www.tryimg.com/u/2019/04/16/unicsul.png"
+        },
+        "campus": { "name": "Paulista", "city": "São Paulo" }
+      }
+    ]
+  }
+}
