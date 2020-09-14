@@ -1,9 +1,9 @@
 'use strict'
 
-const filter = (req, res, next) => {
-  const filters = {
+const filters = (req, res, next) => {
+  const filter = {
     where: {},
-    relationships: [],
+    relationships: {},
   }
 
   const keysConditions = Object.keys(req.query).filter(
@@ -17,28 +17,28 @@ const filter = (req, res, next) => {
       key !== 'sort',
   )
 
-  filters.where = Object.assign(
-    filters.where,
+  filter.where = Object.assign(
+    filter.where,
     ...keysConditions.map((key) => {
       return { [key]: req.query[key] }
     }),
   )
 
-  filters.relationships = Object.assign(
-    filters.relationships,
+  filter.relationships = Object.assign(
+    filter.relationships,
     ...keysRelations.map((key) => {
       return { [key]: req.query[key] }
     }),
   )
 
-  const { sort } = req.query
-  filters.sort = Object.keys(sort || {}).map((key) => {
+  const { sort = {} } = req.query
+  filter.sort = Object.keys(sort).map((key) => {
     return [key, sort[key]]
   })
 
-  req.filters = filters
+  req.filters = filter
 
   next()
 }
 
-module.exports = filter
+module.exports = filters

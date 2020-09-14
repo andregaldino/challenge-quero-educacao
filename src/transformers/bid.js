@@ -2,7 +2,6 @@
 
 const transform = (bids) => {
   return bids.map((bid) => {
-    const { course } = bid
     return {
       full_price: bid.full_price,
       price_with_discount: bid.price_with_discount,
@@ -16,19 +15,19 @@ const transform = (bids) => {
       enrollment_semester: bid.enrollment_semester,
       enabled: bid.enabled,
       course: {
-        name: course.name,
-        kind: course.kind,
-        level: course.level,
-        shift: course.shift,
+        name: bid.course.name,
+        kind: bid.course.kind,
+        level: bid.course.level,
+        shift: bid.course.shift,
       },
       university: {
-        name: course.university.name,
-        score: course.university.score,
-        logo_url: course.university.logo_url,
+        name: bid.course.university.name,
+        score: bid.course.university.score,
+        logo_url: bid.course.university.logo_url,
       },
       campus: {
-        name: course.campus.name,
-        city: course.campus.city,
+        name: bid.course.campus.name,
+        city: bid.course.campus.city,
       },
     }
   })

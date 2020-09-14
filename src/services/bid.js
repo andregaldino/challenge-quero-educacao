@@ -5,7 +5,7 @@ const { Course, University, Campus, Bid } = require('../entities')
 const getAll = async (filters) => {
   const { where } = filters
   const { relationships } = filters
-  const { university, campus, course } = relationships || []
+  const { university, campus, course } = relationships
   const { sort } = filters
   const relationshipUniversity = {
     model: University,
