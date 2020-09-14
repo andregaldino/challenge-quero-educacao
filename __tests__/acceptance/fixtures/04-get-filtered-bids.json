@@ -1,5 +1,5 @@
 {
-  "title": "test get all bids must be return 200",
+  "title": "test get filtered bids and must be return 200",
   "request": {
     "headers": {
       "Accept": "application/json"

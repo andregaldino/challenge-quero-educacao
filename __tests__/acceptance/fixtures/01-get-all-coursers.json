@@ -1,5 +1,5 @@
 {
-  "title": "test get all courses must be return 200",
+  "title": "test get all courses and must be return 200",
   "request": {
     "headers": {
       "Accept": "application/json"
