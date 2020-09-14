@@ -5,6 +5,8 @@ const dotenv = require('dotenv')
 const envFile = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env'
 dotenv.config({ path: envFile })
 
+const dbLog = process.env.QUERY_LOG || false
+
 module.exports = {
   server: {
     port: process.env.PORT || 80,
@@ -16,5 +18,6 @@ module.exports = {
     db: process.env.DATABASE_DB || 'marketplace',
     username: process.env.DATABASE_USER || 'quero',
     password: process.env.DATABASE_PASSWORD || 'secret',
+    logging: String(dbLog) === 'true',
   },
 }
