@@ -3,7 +3,7 @@
 const express = require('express')
 const router = new express.Router()
 
-const { courseController } = require('./controllers')
+const { courseController, bidController } = require('./controllers')
 
 router.get('/health', (req, res) => {
   res.send({
@@ -12,5 +12,6 @@ router.get('/health', (req, res) => {
 })
 
 router.get('/courses', courseController.all)
+router.get('/bids', bidController.all)
 
 module.exports = router
