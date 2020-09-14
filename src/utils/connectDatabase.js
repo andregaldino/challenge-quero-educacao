@@ -9,6 +9,9 @@ const sequelize = new Sequelize(db, username, password, {
   host,
   port,
   dialect: driver,
+  define: {
+    timestamps: false,
+  },
 })
 
 module.exports = sequelize
