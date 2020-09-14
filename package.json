@@ -14,7 +14,7 @@
     "db:reset": "npx sequelize-cli db:seed:all",
     "pretest:acceptance": "yarn sequelize db:drop && yarn db:create && npx sequelize-cli db:migrate &&  yarn db:seed",
     "test:acceptance": "mocha __tests__/acceptance/api.js -R nyan",
-    "test": "cross-env NODE_ENV=test mocha ./__tests__/**/*.spec.js -R landing && cross-env NODE_ENV=test  yarn test:acceptance"
+    "test": "cross-env NODE_ENV=test mocha ./__tests__/**/*.spec.js -R landing && cross-env NODE_ENV=test yarn test:acceptance"
   },
   "devDependencies": {
     "chai": "^4.2.0",
