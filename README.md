@@ -142,3 +142,35 @@ Rodar os testes
 ```sh
 yarn test
 ```
+
+# Utilização
+
+## Endpoints
+Listagem de cursos
+`/v1/courses`
+
+Listagem de ofertas
+`/v1/bids`
+
+
+## Filtros e Ordernação
+
+Os paramentros de filtros são os proprios campos da entidade em questão, para filtrar por uma atributo de uma relacionamento é preciso utilizar a seguinte estrutura :
+
+Ex: 
+Listagem de cursos com o level `x` e da universidade `y`
+
+`/v1/courses?level=x&university[name]=y`
+
+Listagem de cursos com o level `x`, da universidade `y` e do campus `z`
+
+`/v1/courses?level=x&university[name]=y&campus[name]=z`
+
+Para fazer ordernação, basta usar o parametro sort com o atributo da entidade em questão e a ordernação crescente(`asc`) ou decrescente(`desc`)
+
+Ex: 
+Listagem de bids com o curso `x` e ordernado pelo campo `price_with_discount` ordem crescente
+
+`/v1/bids?course[name]=x&sort[price_with_discount]=asc`
+
+
